@@ -6,10 +6,10 @@ const cliente1 = new Cliente();
 cliente1.nome = "Jose";
 cliente1.cpf = 11122233309;
 
-const cliente2 = new Cliente();
+// const cliente2 = new Cliente();
 
-cliente2.nome = "Joana";
-cliente2.cpf = 88822233309;
+// cliente2.nome = "Joana";
+// cliente2.cpf = 88822233309;
 
 const contaCorrenteJose = new ContaCorrente();
 
@@ -18,7 +18,9 @@ contaCorrenteJose.agencia = 1001;
 contaCorrenteJose.cliente = cliente1;
 
 const conta2 = new ContaCorrente();
-conta2.cliente = cliente2;
+conta2.cliente = new Cliente();
+conta2.cliente.nome = "Joana";
+conta2.cliente.cpf = 88822233309;
 conta2.agencia = 1002;
 console.log(conta2);
 
