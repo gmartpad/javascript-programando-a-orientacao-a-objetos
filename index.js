@@ -5,19 +5,24 @@ class Cliente {
 
 class ContaCorrente {
     agencia;
-    // #saldo = 0;
+    // #saldo = 0; 
+    // https://github.com/tc39/proposal-class-fields#private-fields
     _saldo = 0;
 
     sacar(valorSacado){
-        if(this._saldo >= valorSacado){
-            this._saldo -= valorSacado;
+        if(this._saldo < valorSacado){
+            return;
         }
+        this._saldo -= valorSacado;
+        return valorSacado;
     }
 
     depositar(valorDepositado){
-        if(valorDepositado > 0){
-            this._saldo += valorDepositado;
+        if(valorDepositado <= 0){
+            return;
         }
+        this._saldo += valorDepositado;
+        return valorDepositado;
     }
 
 }
