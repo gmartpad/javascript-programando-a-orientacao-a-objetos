@@ -1,5 +1,8 @@
 export class ContaCorrente {
     agencia;
+    cliente;
+
+
     // #saldo = 0; 
     // https://github.com/tc39/proposal-class-fields#private-fields
     _saldo = 0;
@@ -18,6 +21,15 @@ export class ContaCorrente {
         }
         this._saldo += valorDepositado;
         return valorDepositado;
+    }
+
+    transferir(valorTransferido, contaBeneficiaria){
+        const valorSacado = this.sacar(valorTransferido);
+        if(isNaN(valorSacado)){
+            console.error("Não foi possível realizar transferência, saldos insuficientes")
+            return;
+        }
+        contaBeneficiaria.depositar(valorSacado);
     }
 
 }

@@ -15,10 +15,21 @@ const contaCorrenteJose = new ContaCorrente();
 
 // contaCorrenteJose.saldo = 0;
 contaCorrenteJose.agencia = 1001;
+contaCorrenteJose.cliente = cliente1;
 
-contaCorrenteJose.depositar(100);
+const conta2 = new ContaCorrente();
+conta2.cliente = cliente2;
+conta2.agencia = 1002;
+console.log(conta2);
+
+contaCorrenteJose.depositar(500);
 contaCorrenteJose.depositar(-1);
 contaCorrenteJose.sacar(100);
 
 console.log(contaCorrenteJose);
 console.log(cliente2);
+
+contaCorrenteJose.transferir(20, conta2)
+
+console.log(contaCorrenteJose);
+console.log(conta2);
